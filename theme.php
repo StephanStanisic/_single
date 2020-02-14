@@ -18,7 +18,7 @@ global $Wcms;
 			<link rel="stylesheet" href="<?= $Wcms->asset('assets/css/node-editor.bootstrap.min.css') ?>" />
 			<link rel="stylesheet" href="<?= $Wcms->asset('assets/css/note-popover.bootstrap.min.css') ?>" />
 		<?php } ?>
-		<?= $Wcms->css() ?>
+		<?= preg_replace('/<link rel="stylesheet" href="(.*?)\/bootstrap\.min\.css"(.*?)>/', "", $Wcms->css()); ?>
 		<link rel="stylesheet" href="<?= $Wcms->asset('assets/css/style.css') ?>" />
 	</head>
 	<body class="is-preload">
